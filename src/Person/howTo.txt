@@ -1,0 +1,21 @@
+First is : index.js: To render or map the components we have created in this application to the index.html file's elements.
+            Here we are mapping App.js's App component that we hav created using class App.
+
+App.js: Has our main component and exporting that component as default to the index.js file.
+        THere must be only one parent element inside the component function or class and we can nest other components inside it.
+        Like we have used the Person component inside our App.js 
+        We can pass arguments to the comppnent function Person and also some text.
+
+Person.js : is a js file to  create a component that is called Person.
+            It is called in App.js
+            We can use the passed args using props.
+            props.children is for text passed inside the opening and closing tag of an element.  
+
+Object in js:
+x = {name:"Rohit", Class:"10th"}(name and age are the two variables for that function).
+List of Objects in js :
+y = [{name:"Sharma},{name:"Rohit"}]
+
+When we use class component state then it will automatically add all the other variables there inside state property
+but when we use hooks we have to update that manually means add the rest of the components manually.
+therefore in functions while using hooks try to use multiple usestate wiyhm mnultiple elements.

@@ -19,3 +19,33 @@ y = [{name:"Sharma},{name:"Rohit"}]
 When we use class component state then it will automatically add all the other variables there inside state property
 but when we use hooks we have to update that manually means add the rest of the components manually.
 therefore in functions while using hooks try to use multiple usestate wiyhm mnultiple elements.
+
+Statefull : that has a used the state property inside it.(also called smart or container component as they contain the state of the component )
+stateless: that is not having any relation to state.(also called dumb or presentational components)
+(try to use less container components)
+
+We can also pass method references bw the components:
+The click property inside the Person component in while returning.
+
+The onclick paragraph  feature is only available in class based components
+
+We can also pass variables to the handler function
+So while calling the function use .bind to bind it to the class and
+inside of bind pass this and the value you want to pass to the function.
+<button onClick={this.switchNameHandler.bind(this, "Sukha")}>Switch Name</button>
+
+Using event in a function:
+When we want to change the text just entered:
+create a new event handler function that takes a event Object as a arg(this is predefind)
+using this Object go to the target and get value at the target.
+
+Two way binding:
+when we update the value from textbox to the paragraph
+also the current value of para is available inside the textbox
+
+HOw to add css file to a component js file:
+create that file and import it is the js file always remember to give a classname to main div of the component and 
+use that name for styling in that css file.
+
+Inline styling:
+create a object in render and map it to style propperty of any components field.

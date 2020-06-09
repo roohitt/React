@@ -16,6 +16,8 @@ x = {name:"Rohit", Class:"10th"}(name and age are the two variables for that fun
 List of Objects in js :
 y = [{name:"Sharma},{name:"Rohit"}]
 
+In some places instead of using this.funtion() we have used this.function because we dont want to call it now.
+
 When we use class component state then it will automatically add all the other variables there inside state property
 but when we use hooks we have to update that manually means add the rest of the components manually.
 therefore in functions while using hooks try to use multiple usestate wiyhm mnultiple elements.
@@ -49,3 +51,7 @@ use that name for styling in that css file.
 
 Inline styling:
 create a object in render and map it to style propperty of any components field.
+
+we have learnt that we can change para text when button clicked but we here are now making it dissapear on 
+button click.We are using a handler which changes the state value (showState ) to true or false when called.
+Then we user ternary operator.

@@ -10,7 +10,9 @@ class App extends Component {
       {name:"Shreyansh", age:29},
       {name:"Lokesh", age:29},
       {name:"Kapil", age:29}
-    ]
+    ],
+    ohterState: "some other value",
+    showPersons:false
   }
 
   switchNameHandler = (sukhayadavname) => {
@@ -21,7 +23,7 @@ class App extends Component {
         {name:"Shreyansh Mamgain", age:29},
         {name:"Lokesh parmar", age:29},
         {name:"Kapil minda", age:29}
-      ] 
+      ]
     } )//takes object as an argument and sets the state (is a method in the react lib)
   }
 
@@ -37,9 +39,13 @@ class App extends Component {
         }
       )
     }
+    togglePersonHandler = () =>{
+        const doesShow = this.state.showPersons;
+        this.setState({showPersons:!doesShow});
+    }
   
 
-  render() {
+  render(){
 
     const style = {
       backgroundColor: 'Red',
@@ -51,14 +57,15 @@ class App extends Component {
       <div className="App">
         <h1>Hi, I'm a react App</h1>
         <p>This is a para</p>
-        <button style={style} onClick={() => this.switchNameHandler("Sukha Vishal")}>Switch Name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} click = {this.switchNameHandler.bind(this,"Sukha")}>My hobbies: Racing</Person>
+        <button style={style} onClick={this.togglePersonHandler}>Switch Name</button>
+        {this.state.showPersons ?<div> 
+        <Person name={this.state.persons[0].name}  age={this.state.persons[0].age} click = {this.switchNameHandler.bind(this,"Sukha")}>My hobbies: Racing</Person>
         <Person name={this.state.persons[1].name}  age={this.state.persons[1].age} changed = {this.nameChangedHandler}>My hobbies: Cricket</Person>
         <Person name={this.state.persons[2].name}  age={this.state.persons[2].age}>My hobbies: Football</Person>
         <Person name={this.state.persons[3].name}  age={this.state.persons[3].age}>My hobbies: BasketBall</Person>
+        </div> : null}
       </div>
     );
   }
 }
-
 export default App;

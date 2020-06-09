@@ -11,7 +11,7 @@ class App extends Component {
       {name:"Lokesh", age:29},
       {name:"Kapil", age:29}
     ],
-    ohterState: "some other value",
+    otherState: "some other value",
     showPersons:false
   }
 
@@ -53,17 +53,25 @@ class App extends Component {
       border: '1px solid blue'
     }
 
+    let persons = null;
+
+    if(this.state.showPersons){
+      
+      persons = (
+      <div> 
+        <Person name={this.state.persons[0].name}  age={this.state.persons[0].age} click = {this.switchNameHandler.bind(this,"Sukha")}>My hobbies: Racing</Person>
+        <Person name={this.state.persons[1].name}  age={this.state.persons[1].age} changed = {this.nameChangedHandler}>My hobbies: Cricket</Person>
+        <Person name={this.state.persons[2].name}  age={this.state.persons[2].age}>My hobbies: Football</Person>
+        <Person name={this.state.persons[3].name}  age={this.state.persons[3].age}>My hobbies: BasketBall</Person>
+        </div>);
+    }
+
     return (
       <div className="App">
         <h1>Hi, I'm a react App</h1>
         <p>This is a para</p>
         <button style={style} onClick={this.togglePersonHandler}>Switch Name</button>
-        {this.state.showPersons ?<div> 
-        <Person name={this.state.persons[0].name}  age={this.state.persons[0].age} click = {this.switchNameHandler.bind(this,"Sukha")}>My hobbies: Racing</Person>
-        <Person name={this.state.persons[1].name}  age={this.state.persons[1].age} changed = {this.nameChangedHandler}>My hobbies: Cricket</Person>
-        <Person name={this.state.persons[2].name}  age={this.state.persons[2].age}>My hobbies: Football</Person>
-        <Person name={this.state.persons[3].name}  age={this.state.persons[3].age}>My hobbies: BasketBall</Person>
-        </div> : null}
+        {persons}
       </div>
     );
   }

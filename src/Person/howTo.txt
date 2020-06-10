@@ -55,3 +55,26 @@ create a object in render and map it to style propperty of any components field.
 we have learnt that we can change para text when button clicked but we here are now making it dissapear on 
 button click.We are using a handler which changes the state value (showState ) to true or false when called.
 Then we user ternary operator.
+
+Now instead of using <person> component every time we wil use javascript arrays and a map function that will map 
+map function maps every element in arrays into something else.
+inside the array we have all the person data.now we will return it using js.
+We can also pass index and it is automatically returned by the react.
+
+in deleteperson handler we use slice() because here we are making changes to the original array but we should make of copy of it First
+so this lsice method will return a copy of the original persons array:const persons = this.state.persons.slice();
+Or we can use the spread operator that is = ... This will spread all the array elements and create a new array :[...this.state.persons];
+
+Our changed option in map will recieve event as it the first function executed now.
+We also pass the id so that we can change only the current element 
+NOw in NamechangeHandler find the element with same id.
+store it in person
+change name value with event value
+create new persons array with already persons array
+now change person in persons and use it in setstate
+
+
+ain hughlighs of section 3:we should output content conditionally by using javascript and the same for lists.
+                                if you want to return or render a list, you use the map operator,
+                                You also learned that map gives you not only the element for which it's currently executing this function
+                                but also access to the index if you need that, for example, to remove an element that you should add this key
